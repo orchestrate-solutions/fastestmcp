@@ -13,10 +13,10 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install uv
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
-      - run: uv pip install --upgrade pip
-      - run: uv pip install -r requirements.txt
-      - run: uv pip install -e .
-      - run: uv pip install ruff pytest
+      - run: uv pip install --system --upgrade pip
+      - run: uv pip install --system -r requirements.txt
+      - run: uv pip install --system -e .
+      - run: uv pip install --system ruff pytest
       - name: Lint with ruff
         run: ruff check . --fix
       - name: Test CLI functionality
