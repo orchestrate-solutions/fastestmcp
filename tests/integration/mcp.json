@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "local-echo-server": {
+      "type": "stdio",
+      "command": "/Users/jwink/Documents/github/fastmcp-templates/.venv/bin/python",
+      "args": ["server/stdio/server.py"],
+      "description": "Test MCP server with echo tool"
+    },
+    "local-openapi-server": {
+      "type": "http",
+      "url": "http://localhost:8000",
+      "description": "Test OpenAPI MCP server with enhanced capabilities"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+include README.md
+include LICENSE
+include pytest.ini
+include mcp.json
+recursive-include client *.py
+recursive-include server *.py
+recursive-include server/openapi *.txt
+recursive-include tests *.py
+recursive-include document *.md
+recursive-include http-server *.md
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .pytest_cache
+global-exclude .venv
+global-exclude .DS_Store
+global-exclude *.egg-info
