@@ -314,6 +314,21 @@ wheels = [
 ]
 
 [[package]]
+name = "fastestmcp"
+version = "1.0.2"
+source = { editable = "." }
+dependencies = [
+    { name = "fastmcp" },
+    { name = "httpx" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "fastmcp", specifier = ">=2.12.0" },
+    { name = "httpx", specifier = ">=0.28.0" },
+]
+
+[[package]]
 name = "fastmcp"
 version = "2.12.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1148,17 +1163,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/15/b9/cc3017f9a9c9b6e27
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ce/fd/901cfa59aaa5b30a99e16876f11abe38b59a1a2c51ffb3d7142bb6089069/starlette-0.47.3-py3-none-any.whl", hash = "sha256:89c0778ca62a76b826101e7c709e70680a1699ca7da6b44d38eb0a7e61fe4b51", size = 72991, upload-time = "2025-08-24T13:36:40.887Z" },
 ]
-
-[[package]]
-name = "test-client-client"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "fastmcp" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "fastmcp", specifier = ">=2.12.0" }]
 
 [[package]]
 name = "typing-extensions"

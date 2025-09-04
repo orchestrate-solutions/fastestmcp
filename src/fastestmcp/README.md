@@ -5,6 +5,13 @@
 [![PyPI version](https://badge.fury.io/py/fastestmcp.svg)](https://badge.fury.io/py/fastestmcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## 🤝 Contributing
+
+We love contributions! Here's how to get involved:
+
+1. **Report Issues**: Found a bug? [Open an issue](https://github.com/orchestrate-solutions/fastestmcp/issues)
+2. **Suggest Components**: Have an idea for a new component? [Let us know](https://github.com/orchestrate-solutions/fastestmcp/discussions)
+
 ## 🚀 Quick Start
 
 ### Level 1: Zero-Config (80% of use cases)
@@ -307,8 +314,8 @@ tools:
 
 We love contributions! Here's how to get involved:
 
-1. **Report Issues**: Found a bug? [Open an issue](https://github.com/JoshuaWink/fastmcp-templates/issues)
-2. **Suggest Components**: Have an idea for a new component? [Let us know](https://github.com/JoshuaWink/fastmcp-templates/discussions)
+1. **Report Issues**: Found a bug? [Open an issue](https://github.com/orchestrate-solutions/fastestmcp/issues)
+2. **Suggest Components**: Have an idea for a new component? [Let us know](https://github.com/orchestrate-solutions/fastestmcp/discussions)
 3. **Contribute Code**: See our [contributing guide](CONTRIBUTING.md)
 
 ### Adding Components

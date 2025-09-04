@@ -1,184 +1,166 @@
 
-# FastestMCP Templates
+# FastestMCP
 
-**Generate production-ready MCP servers and clients in seconds with the FastestMCP CLI.**
+**Generate production-ready MCP servers and clients in seconds.**
 
 [![uv](https://img.shields.io/badge/⚡_uv-Recommended-blue)](https://github.com/astral-sh/uv)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
 
----
+## � Quick Start
 
-# FastestMCP CLI - Server & Client Generator
+### Install
+```bash
+pip install fastestmcp
+# or
+uv add fastestmcp
+```
 
-A powerful CLI tool for generating robust, modular Model Context Protocol (MCP) clients and servers using FastMCP.
+### Create Your First Server
+```python
+from fastestmcp import Server
 
-## ✨ Key Features
+app = Server("my-app")
 
-- 🚀 **One-command generation** - Create servers and clients instantly
-- 📋 **Multiple templates** - Weather, file-organizer, GitHub monitor, API client, and more
-- 🏗️ **Flexible architecture** - Mono-file or structured projects
-- 🔧 **Component-based** - Modular, testable, and reusable components
-- 🌐 **Multi-transport** - stdio, HTTP, SSE, WebSocket support
-- 📚 **Comprehensive docs** - CLI reference, examples, and guides
+@app.tool
+def hello(name: str):
+    return f"Hello {name}!"
 
-## 🚀 Quick CLI Examples
+app.run()
+```
+
+**That's it!** Your MCP server is ready.
+
+## �️ CLI Usage
+
+Generate servers instantly:
 
 ```bash
-# Generate a weather monitoring server
-uv run python -m fastestmcp.cli server --template weather --name weather-app
+# Weather server
+fastestmcp server --template weather --name weather-app
 
-# Create a file organizer with custom components
-uv run python -m fastestmcp.cli server --name file-manager --tools 3 --resources 2 --structure structured
+# File organizer
+fastestmcp server --template file-organizer --name file-manager
 
-# Build an API client
-uv run python -m fastestmcp.cli client --template api-client --name rest-consumer --apis 4
-
-# Simple server for prototyping
-uv run python -m fastestmcp.cli server --level 1 --name prototype
+# Custom server
+fastestmcp server --name custom --tools 3 --resources 2
 ```
 
-## 📁 Repository Structure
+## 🔗 Connect to AI Agents
 
-- `src/fastestmcp/` — FastMCP CLI and generation templates
-- `src/client/` — MCP client implementation and examples
-- `src/server/` — Server templates and example applications
-- `docs/` — Architecture guides and detailed documentation
-- `tests/` — Comprehensive test suite with integration tests
-- `cli-cheatsheet.md` — Complete CLI reference guide
+Add your server to your MCP configuration so AI agents can use it:
 
-## Quickstart
+### For Claude Desktop
 
-### Option 1: Using uv (Recommended)
+Create or update `~/Library/Application Support/Claude/claude_desktop_config.json`:
 
-1. Clone and enter the repo:
-
-```sh
-git clone https://github.com/JoshuaWink/fastmcp-templates.git
-cd fastmcp-templates
+```json
+{
+  "mcpServers": {
+    "my-app": {
+      "command": "python",
+      "args": ["/path/to/your/server.py"]
+    }
+  }
+}
 ```
 
-2. Install uv if you haven't already:
+### For VS Code
 
-```sh
-# macOS/Linux
-curl -LsSf https://astral.sh/uv/install.sh | sh
+Create or update `.vscode/mcp.json` in your workspace:
 
-# Or using pip
-pip install uv
+```json
+{
+  "mcpServers": {
+    "my-app": {
+      "command": "python",
+      "args": ["/path/to/your/server.py"]
+    }
+  }
+}
 ```
 
-3. Use uv to run commands (no virtual environment needed!):
+### For Other MCP Clients
 
-```sh
-# Run tests
-uv run pytest -q
+Most MCP clients look for a `mcp.json` file in:
+- `~/.mcp.json` (global)
+- `./mcp.json` (project-specific)
+- Or their own configuration location
 
-# Use the FastestMCP CLI
+Example configuration:
+```json
+{
+  "mcpServers": {
+    "fastestmcp-server": {
+      "command": "python",
+      "args": ["server.py"],
+      "cwd": "/path/to/your/project"
+    }
+  }
+}
+```
+
+**Restart your MCP client after updating the configuration!**
+
+## � Installation Options
+
+### Global Install (Recommended)
+```bash
+pip install fastestmcp
+```
+
+### uv (Modern Python)
+```bash
+uv add fastestmcp
+```
+
+### From Source
+```bash
+git clone https://github.com/orchestrate-solutions/fastestmcp.git
+cd fastestmcp
 uv run python -m fastestmcp.cli --help
-uv run python -m fastestmcp.cli server --template weather --name weather-app
-
-# Run the demo
-uv run python src/fastestmcp/demo.py
 ```
 
-### Option 2: Using pip (Traditional)
+## 🎨 Examples
 
-1. Clone and enter the repo:
+### Basic Tool Server
+```python
+from fastestmcp import Server
 
-```sh
-git clone https://github.com/JoshuaWink/fastmcp-templates.git
-cd fastmcp-templates
+app = Server("calculator")
+
+@app.tool
+def add(a: int, b: int):
+    return a + b
+
+@app.tool
+def multiply(a: int, b: int):
+    return a * b
+
+app.run()
 ```
 
-2. Create and activate a virtual environment:
+### Component-Based Server
+```python
+from fastestmcp import Server, WebScraper, FileSystem
 
-```sh
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+app = Server("content-manager")
+app.add_component(WebScraper(urls=["news.com"]))
+app.add_component(FileSystem("/data"))
+app.run()
 ```
 
-3. Install dependencies:
+## 📚 Documentation
 
-```sh
-pip install -r requirements.txt
-```
+- [CLI Reference](docs/cli/cli-cheatsheet.md)
+- [Architecture Guide](docs/architecture/)
+- [Examples](docs/examples/)
+- [Developer Guide](docs/developer/)
 
-4. Run the test suite:
+## 🤝 Contributing
 
-```sh
-pytest -q
-```
+Open issues or PRs. Tests required for new features.
 
-5. Use the CLI:
-
-```sh
-python -m fastestmcp.cli --help
-```
-
-## FastestMCP CLI Usage
-
-The FastestMCP CLI provides powerful server and client generation:
-
-### Generate MCP Servers
-```sh
-# Using uv (recommended)
-uv run python -m fastestmcp.cli server --template weather --name weather-app
-uv run python -m fastestmcp.cli server --level 1 --name basic-server
-
-# Using pip
-python -m fastestmcp.cli server --template weather --name weather-app
-```
-
-### Generate MCP Clients
-```sh
-# Using uv (recommended)
-uv run python -m fastestmcp.cli client --template api-client --name my-client --apis 3
-
-# Using pip
-python -m fastestmcp.cli client --template api-client --name my-client --apis 3
-```
-
-### Available Templates
-- **Server Templates**: weather, file-organizer, code-reviewer, github-monitor, todo-manager
-- **Client Templates**: api-client, database-client, filesystem-client, notification-client
-
-See `cli-cheatsheet.md` for complete CLI reference.
-
-## Templates & Usage
-
-This repo is marked as a GitHub template. Use the green "Use this template" button on GitHub to scaffold a new repo.
-
-### Why Use uv?
-
-**uv** is a fast Python package manager that:
-- ⚡ **Blazingly fast** - Installs packages in seconds
-- 🐍 **No virtual environment needed** - Manages environments automatically
-- 🔄 **Drop-in replacement** for pip/pip-tools
-- 📦 **Smart dependency resolution** - Avoids conflicts
-- 🏃 **One-command execution** - `uv run` handles everything
-
-### Development Workflow
-
-```sh
-# Quick setup with uv
-git clone https://github.com/JoshuaWink/fastmcp-templates.git
-cd fastmcp-templates
-
-# Run tests instantly
-uv run pytest
-
-# Generate a server
-uv run python -m fastestmcp.cli server --template weather --name my-weather-app
-
-# Run your new server
-cd my-weather-app && uv run python server.py
-```
-
-## Contributing
-
-Please open issues or pull requests. Tests are required for new features.
-
-## License
+## 📄 License
 
 Apache-2.0

@@ -15,7 +15,7 @@ class TestCLICommands:
         """Test that CLI shows help when no arguments provided"""
         result = subprocess.run([
             sys.executable, "-m", "fastestmcp.cli"
-        ], capture_output=True, text=True, cwd="/Users/jwink/Documents/github/fastmcp-templates/src")
+        ], capture_output=True, text=True, cwd="/Users/jwink/Documents/github/fastestmcp/src")
 
         assert result.returncode == 0
         assert "FastestMCP CLI" in result.stdout
@@ -27,7 +27,7 @@ class TestCLICommands:
         """Test CLI new command help"""
         result = subprocess.run([
             sys.executable, "-m", "fastestmcp.cli", "new", "--help"
-        ], capture_output=True, text=True, cwd="/Users/jwink/Documents/github/fastmcp-templates/src")
+        ], capture_output=True, text=True, cwd="/Users/jwink/Documents/github/fastestmcp/src")
 
         assert result.returncode == 0
         assert "--level" in result.stdout
@@ -40,7 +40,7 @@ class TestCLICommands:
         """Test CLI client command help"""
         result = subprocess.run([
             sys.executable, "-m", "fastestmcp.cli", "client", "--help"
-        ], capture_output=True, text=True, cwd="/Users/jwink/Documents/github/fastmcp-templates/src")
+        ], capture_output=True, text=True, cwd="/Users/jwink/Documents/github/fastestmcp/src")
 
         assert result.returncode == 0
         assert "--template" in result.stdout
@@ -55,7 +55,7 @@ class TestCLICommands:
                 sys.executable, "-m", "fastestmcp.cli", "new",
                 "--level", "1", "--name", "test_cli_level1"
             ], capture_output=True, text=True, cwd=temp_dir,
-            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
             assert result.returncode == 0
             assert "✅" in result.stdout
@@ -72,7 +72,7 @@ class TestCLICommands:
                 sys.executable, "-m", "fastestmcp.cli", "new",
                 "--level", "2", "--name", "test_cli_level2"
             ], capture_output=True, text=True, cwd=temp_dir,
-            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
             assert result.returncode == 0
             assert "✅" in result.stdout
@@ -90,7 +90,7 @@ class TestCLICommands:
                 "--name", "test_custom", "--tools", "3", "--resources", "2",
                 "--prompts", "1", "--transport", "stdio", "--structure", "mono"
             ], capture_output=True, text=True, cwd=temp_dir,
-            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
             assert result.returncode == 0
             assert "✅" in result.stdout
@@ -107,7 +107,7 @@ class TestCLICommands:
                 "--name", "test_notifications", "--tools", "2", "--resources", "1",
                 "--notifications", "3", "--subscriptions", "2", "--transport", "stdio", "--structure", "mono"
             ], capture_output=True, text=True, cwd=temp_dir,
-            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
             assert result.returncode == 0
             assert "✅" in result.stdout
@@ -135,7 +135,7 @@ class TestCLICommands:
                 "--name", "test_client_notifications", "--apis", "2", "--integrations", "1",
                 "--notifications", "2", "--subscriptions", "1", "--transport", "stdio", "--structure", "mono"
             ], capture_output=True, text=True, cwd=temp_dir,
-            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
             assert result.returncode == 0
             assert "✅" in result.stdout
@@ -166,7 +166,7 @@ class TestCLICommands:
                 "--name", "test_structured", "--tools", "2", "--resources", "1",
                 "--structure", "structured"
             ], capture_output=True, text=True, cwd=temp_dir,
-            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
             assert result.returncode == 0
             assert "✅" in result.stdout
@@ -182,7 +182,7 @@ class TestCLICommands:
             sys.executable, "-m", "fastestmcp.cli", "new",
             "--level", "99", "--name", "test_invalid"
         ], capture_output=True, text=True, cwd="/tmp",
-        env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+        env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
         assert result.returncode == 2  # argparse validation error
         assert "invalid choice: 99" in result.stderr
@@ -193,7 +193,7 @@ class TestCLICommands:
             sys.executable, "-m", "fastestmcp.cli", "new",
             "--level", "1"
         ], capture_output=True, text=True, cwd="/tmp",
-        env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+        env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
         assert result.returncode == 2  # argparse error
         assert "the following arguments are required: --name" in result.stderr
@@ -205,7 +205,7 @@ class TestCLICommands:
                 sys.executable, "-m", "fastestmcp.cli", "new",
                 "--template", "weather", "--name", "test_weather"
             ], capture_output=True, text=True, cwd=temp_dir,
-            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
             assert result.returncode == 0
             assert "✅" in result.stdout
@@ -223,7 +223,7 @@ class TestCLICommands:
                 "--name", "test_client", "--apis", "2", "--integrations", "1",
                 "--transport", "stdio", "--structure", "mono"
             ], capture_output=True, text=True, cwd=temp_dir,
-            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
             assert result.returncode == 0
             assert "✅" in result.stdout
@@ -238,7 +238,7 @@ class TestCLICommands:
             sys.executable, "-m", "fastestmcp.cli", "client",
             "--apis", "2"
         ], capture_output=True, text=True, cwd="/tmp",
-        env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+        env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
         assert result.returncode == 2  # argparse error
         assert "the following arguments are required: --name" in result.stderr
@@ -248,7 +248,7 @@ class TestCLICommands:
         result = subprocess.run([
             sys.executable, "-m", "fastestmcp.cli", "invalid_command"
         ], capture_output=True, text=True, cwd="/tmp",
-        env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+        env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
         assert result.returncode == 2  # argparse error
         assert "invalid choice: 'invalid_command'" in result.stderr
@@ -263,7 +263,7 @@ class TestCLICommands:
                 sys.executable, "-m", "fastestmcp.cli", "new",
                 "--level", "1", "--name", "test_output", "--output", str(custom_output)
             ], capture_output=True, text=True, cwd="/tmp",
-            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastmcp-templates/src"})
+            env={**os.environ, "PYTHONPATH": "/Users/jwink/Documents/github/fastestmcp/src"})
 
             assert result.returncode == 0
             assert "✅" in result.stdout

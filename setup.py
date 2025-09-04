@@ -7,11 +7,12 @@ install_requires = [
 ]
 
 setup(
-    name="fastmcp-templates",
-    version="0.1.0",
-    description="A reference kit for building robust, modular Model Context Protocol (MCP) clients and servers with FastMCP",
-    author="JoshuaWink",
-    author_email="joshua@example.com",
+    name="fastestmcp",
+    version="1.0.2",
+    description="Generate production-ready MCP servers and clients in seconds with the FastestMCP CLI",
+    author="Orchestrate LLC",
+    author_email="hello@orchestrate.solutions",
+    url="https://github.com/orchestrate-solutions/fastestmcp",
     package_dir={'': 'src'},
     packages=find_packages('src'),
     install_requires=install_requires,

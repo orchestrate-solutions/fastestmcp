@@ -26,7 +26,7 @@ class TestCLICombinationValidation:
                 [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "realistic_120", "--tools", "120", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             end_time = time.time()
@@ -71,7 +71,7 @@ class TestCLICombinationValidation:
                      "--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
 
                 end_time = time.time()
@@ -115,7 +115,7 @@ class TestCLICombinationValidation:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             end_time = time.time()
@@ -157,7 +157,7 @@ class TestCLICombinationValidation:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -188,7 +188,7 @@ class TestCLICombinationValidation:
                      "--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
 
                 end_time = time.time()
@@ -217,7 +217,7 @@ class TestCLICombinationValidation:
                      "--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
 
                 assert result.returncode == 0
@@ -255,7 +255,7 @@ class TestCLICombinationValidation:
                      "--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
 
                 # Should succeed even with zero components
@@ -288,7 +288,7 @@ class TestCLICombinationValidation:
                      "--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src",
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src",
                     timeout=120  # 2 minute timeout for extreme cases
                 )
 
@@ -328,7 +328,7 @@ class TestCLICombinationValidation:
                      "--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
 
                 # Should succeed
@@ -361,7 +361,7 @@ class TestCLICombinationValidation:
                      "--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
 
                 # Should succeed
@@ -394,7 +394,7 @@ class TestCLICombinationValidation:
                      "--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
 
                 # Should succeed
@@ -429,7 +429,7 @@ class TestCLICombinationValidation:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             end_time = time.time()

@@ -4,16 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fastestmcp"
-version = "1.0.0"
+version = "1.0.2"
 description = "Generate production-ready MCP servers and clients in seconds"
 readme = "README.md"
 license = {text = "Apache-2.0"}
 requires-python = ">=3.10"
 authors = [
-    {name = "Joshua Wink", email = "joshua.wink@gmail.com"},
+    {name = "Orchestrate LLC", email = "hello@orchestrate.solutions"},
 ]
 maintainers = [
-    {name = "Joshua Wink", email = "joshua.wink@gmail.com"},
+    {name = "Orchestrate LLC", email = "hello@orchestrate.solutions"},
 ]
 keywords = ["mcp", "model-context-protocol", "cli", "generator", "server", "client"]
 classifiers = [
@@ -64,11 +64,11 @@ ai = [
 fastestmcp = "fastestmcp.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/JoshuaWink/fastestmcp-templates"
-Documentation = "https://github.com/JoshuaWink/fastestmcp-templates#readme"
-Repository = "https://github.com/JoshuaWink/fastestmcp-templates"
-Issues = "https://github.com/JoshuaWink/fastestmcp-templates/issues"
-Changelog = "https://github.com/JoshuaWink/fastestmcp-templates/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/orchestrate-solutions/fastestmcp"
+Documentation = "https://github.com/orchestrate-solutions/fastestmcp#readme"
+Repository = "https://github.com/orchestrate-solutions/fastestmcp"
+Issues = "https://github.com/orchestrate-solutions/fastestmcp/issues"
+Changelog = "https://github.com/orchestrate-solutions/fastestmcp/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 zip-safe = false

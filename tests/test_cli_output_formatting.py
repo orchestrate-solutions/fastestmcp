@@ -23,7 +23,7 @@ class TestCLIOutputFormatting:
             [sys.executable, "-m", "fastestmcp.cli", "--help"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Check that help text contains expected elements
@@ -44,7 +44,7 @@ class TestCLIOutputFormatting:
             [sys.executable, "-m", "fastestmcp.cli", "--help"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         help_text = result.stdout
@@ -72,7 +72,7 @@ class TestCLIOutputFormatting:
             [sys.executable, "-m", "fastestmcp.cli", invalid_arg],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should have non-zero exit code for errors
@@ -94,7 +94,7 @@ class TestCLIOutputFormatting:
             [sys.executable, "-m", "fastestmcp.cli", "server", "--level", "1"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail due to missing --name
@@ -110,7 +110,7 @@ class TestCLIOutputFormatting:
             [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "test", "--level", "10"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail due to invalid level choice
@@ -127,7 +127,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "testserver", "--level", "1", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -147,7 +147,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "testserver", "--structure", "structured", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -167,7 +167,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "monoserver", "--structure", "mono", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -186,7 +186,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "structserver", "--structure", "structured", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -205,7 +205,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--template", "weather", "--name", "weatherserver", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -224,7 +224,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "componenttest", "--tools", "3", "--resources", "2", "--prompts", "1", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -244,7 +244,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "transporttest", "--transport", "http", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -264,7 +264,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "typetest", "--type", "mcp", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -287,7 +287,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "dirtest", "--output", str(custom_output)],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -305,7 +305,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "emojitest", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -329,7 +329,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "verbosetest", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -349,7 +349,7 @@ class TestCLIOutputFormatting:
                 [sys.executable, "-m", "fastestmcp.cli", "server", "--name", "stdouttest", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Success should go to stdout
@@ -364,7 +364,7 @@ class TestCLIOutputFormatting:
             [sys.executable, "-m", "fastestmcp.cli", "server", "--invalid-flag"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Error should go to stderr
@@ -387,7 +387,7 @@ class TestCLIOutputFormatting:
                     [sys.executable, "-m", "fastestmcp.cli"] + case + ["--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
                 assert result.returncode == 0
                 outputs.append(result.stdout)

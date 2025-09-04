@@ -8,7 +8,7 @@ from unittest.mock import patch, MagicMock
 
 # Import the functions directly from the module
 import sys
-sys.path.append('/Users/jwink/Documents/github/fastmcp-templates/server/stdio')
+sys.path.append('/Users/jwink/Documents/github/fastestmcp/server/stdio')
 
 # We'll test the functions by creating them directly
 def create_clone_git_repository():

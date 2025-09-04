@@ -1,7 +1,6 @@
 
 """
 Area of Responsibility: Resources
-- Register all @server.resource-decorated functions here.
 - Resources expose files, data, or live objects to agents/LLMs via MCP.
 - Use absolute URIs and document resource schemas for discoverability.
 """
@@ -39,14 +38,14 @@ def register_resources(server):
         """
         repositories = [
             {
-                "name": "fastmcp-templates",
-                "description": "Templates and examples for building FastMCP servers and clients",
-                "url": "https://github.com/JoshuaWink/fastmcp-templates.git",
+                "name": "fastestmcp",
+                "description": "Generate production-ready MCP servers and clients in seconds with the FastestMCP CLI",
+                "url": "https://github.com/orchestrate-solutions/fastestmcp.git",
                 "category": "mcp",
                 "language": "python",
-                "tags": ["mcp", "fastmcp", "templates", "examples"],
-                "install_command": "git clone https://github.com/JoshuaWink/fastmcp-templates.git",
-                "readme_url": "https://github.com/JoshuaWink/fastmcp-templates/blob/main/README.md"
+                "tags": ["mcp", "fastmcp", "cli", "templates", "examples", "server", "client", "generator"],
+                "install_command": "git clone https://github.com/orchestrate-solutions/fastestmcp.git",
+                "readme_url": "https://github.com/orchestrate-solutions/fastestmcp/blob/main/README.md"
             },
             {
                 "name": "mcp-server-filesystem",
@@ -101,7 +100,7 @@ def register_resources(server):
         """
         # Define allowed repositories for security
         allowed_repos = {
-            "fastmcp-templates": "https://github.com/JoshuaWink/fastmcp-templates.git",
+            "fastestmcp": "https://github.com/orchestrate-solutions/fastestmcp.git",
             "mcp-server-filesystem": "https://github.com/modelcontextprotocol/server-filesystem.git",
             "mcp-server-git": "https://github.com/modelcontextprotocol/server-git.git",
             "mcp-server-sqlite": "https://github.com/modelcontextprotocol/server-sqlite.git"
@@ -169,9 +168,9 @@ def register_resources(server):
         """
         # Define allowed repositories for security
         allowed_repos = {
-            "fastmcp-templates": {
-                "url": "https://github.com/JoshuaWink/fastmcp-templates.git",
-                "description": "Templates and examples for building FastMCP servers and clients",
+            "fastestmcp": {
+                "url": "https://github.com/orchestrate-solutions/fastestmcp.git",
+                "description": "Generate production-ready MCP servers and clients in seconds with the FastestMCP CLI",
                 "language": "python",
                 "category": "mcp"
             },

@@ -31,7 +31,7 @@ class TestCLIIntegration:
                 [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "level1_test", "--level", "1", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -67,7 +67,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -118,7 +118,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -147,7 +147,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -176,7 +176,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Generate structured version
@@ -189,7 +189,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result_mono.returncode == 0
@@ -231,7 +231,7 @@ class TestCLIIntegration:
                     [sys.executable, "-m", "fastestmcp.cli"] + case + ["--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
 
                 assert result.returncode == 0, f"Generation failed for case: {case}"
@@ -271,7 +271,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -310,7 +310,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -359,7 +359,7 @@ class TestCLIIntegration:
                      "--output", temp_dir],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
 
                 assert result.returncode == 0, f"Failed for transport {transport}"
@@ -388,7 +388,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -429,7 +429,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -479,7 +479,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -539,7 +539,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -576,7 +576,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -612,7 +612,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -683,7 +683,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0
@@ -726,7 +726,7 @@ class TestCLIIntegration:
                  "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             assert result.returncode == 0

@@ -23,7 +23,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "invalid_command"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail with invalid command
@@ -39,7 +39,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--level", "1"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail due to missing required argument
@@ -55,7 +55,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--level", "10"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail due to invalid level choice
@@ -71,7 +71,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--template", "nonexistent"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail due to invalid template choice
@@ -87,7 +87,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--transport", "invalid"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail due to invalid transport choice
@@ -103,7 +103,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--structure", "invalid"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail due to invalid structure choice
@@ -119,7 +119,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--type", "invalid"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail due to invalid type choice
@@ -136,7 +136,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--tools", "abc"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail due to invalid numeric argument
@@ -152,7 +152,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--tools", "-1"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should succeed (CLI doesn't validate negative values, just uses them)
@@ -170,7 +170,7 @@ class TestCLIErrorHandling:
                 [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--output", str(nonexistent_dir)],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed (CLI creates directories automatically)
@@ -189,7 +189,7 @@ class TestCLIErrorHandling:
                     [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--output", str(no_write_dir)],
                     capture_output=True,
                     text=True,
-                    cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                    cwd="/Users/jwink/Documents/github/fastestmcp/src"
                 )
 
                 # Should fail due to permission denied
@@ -214,7 +214,7 @@ class TestCLIErrorHandling:
                 [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed (CLI should overwrite existing files)
@@ -231,7 +231,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "", "--level", "1"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should succeed (empty name is technically valid, though not recommended)
@@ -246,7 +246,7 @@ class TestCLIErrorHandling:
                 [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test_123", "--level", "1", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -265,7 +265,7 @@ class TestCLIErrorHandling:
                 [sys.executable, "-m", "fastestmcp.cli", "new", "--name", long_name, "--level", "1", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -281,7 +281,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--level", "10", "--transport", "invalid"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should fail due to multiple invalid arguments
@@ -298,7 +298,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--level", "1", "--template", "weather"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # This should work (template takes precedence) or fail gracefully
@@ -314,7 +314,7 @@ class TestCLIErrorHandling:
             [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "test", "--template", "weather"],
             capture_output=True,
             text=True,
-            cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+            cwd="/Users/jwink/Documents/github/fastestmcp/src"
         )
 
         # Should either succeed (if template exists) or fail gracefully
@@ -330,7 +330,7 @@ class TestCLIErrorHandling:
                 [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "network_test", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed (no network operations in basic generation)
@@ -350,7 +350,7 @@ class TestCLIErrorHandling:
                 [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "memory_test", "--tools", "1000", "--resources", "1000", "--prompts", "1000", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should either succeed or fail gracefully
@@ -366,7 +366,7 @@ class TestCLIErrorHandling:
                 [sys.executable, "-m", "fastestmcp.cli", "new", "--name", unicode_name, "--level", "1", "--output", temp_dir],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
@@ -386,7 +386,7 @@ class TestCLIErrorHandling:
                 [sys.executable, "-m", "fastestmcp.cli", "new", "--name", "spaced_test", "--output", str(spaced_dir)],
                 capture_output=True,
                 text=True,
-                cwd="/Users/jwink/Documents/github/fastmcp-templates/src"
+                cwd="/Users/jwink/Documents/github/fastestmcp/src"
             )
 
             # Should succeed
