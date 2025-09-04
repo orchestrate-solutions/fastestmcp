@@ -9,17 +9,6 @@ from .test_generator import generate_test_file
 component_loader = ComponentLoader()
 
 
-"""
-Mono server generation functions for FastestMCP CLI
-Now uses the component-based system for generating servers
-"""
-
-from ..components.component_loader import ComponentLoader
-
-# Initialize component loader
-component_loader = ComponentLoader()
-
-
 def generate_stdio_mono_server(name: str, tools: int, resources: int, prompts: int, notifications: int, subscriptions: int, server_type: str) -> str:
     """Generate a single-file Stdio server using component templates"""
     code = f'''#!/usr/bin/env python3
