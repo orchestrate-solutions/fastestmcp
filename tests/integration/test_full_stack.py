@@ -64,7 +64,7 @@ async def test_subscription_unsubscribe(mcp_server):
     import types
     client.call_subscription = types.MethodType(test_call_subscription, client)
     handle = client.subscriptions.subscribe('demo_subscription')
-    msg = handle.get(timeout=2)
+    handle.get(timeout=2)
     # Simulate unsubscribe (stop the thread)
     handle.stop()
     # After unsubscribe, no more events should be received (queue should block and timeout)

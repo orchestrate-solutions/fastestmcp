@@ -51,7 +51,7 @@ class TestCLIGeneration:
                 code = f.read()
 
             # Parse the generated code to ensure it's valid Python
-            tree = ast.parse(code)
+            ast.parse(code)
 
             # Check that it contains expected components
             assert "from mcp.server.fastmcp import FastMCP" in code
@@ -75,7 +75,7 @@ class TestCLIGeneration:
             with open(generated_file, 'r') as f:
                 code = f.read()
 
-            tree = ast.parse(code)
+            ast.parse(code)
             assert "from mcp.server.fastmcp import FastMCP" in code
             assert "register_tools" in code  # Changed from @app.tool decorator
             assert "register_resources" in code  # Changed from @app.resource decorator
@@ -237,7 +237,7 @@ class TestCLIGeneration:
     def test_template_generation(self):
         """Test template-based generation"""
         with tempfile.TemporaryDirectory() as temp_dir:
-            result = generate_server_from_template("weather", "weather_app", temp_dir)
+            generate_server_from_template("weather", "weather_app", temp_dir)
 
             # Check that file was created
             server_file = Path(temp_dir) / "weather_app.py"

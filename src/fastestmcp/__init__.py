@@ -23,14 +23,12 @@ That's it! No configuration, no boilerplate, no complexity.
 import os
 import sys
 import json
-import asyncio
-from typing import Dict, List, Any, Optional, Callable, Union
+from typing import List, Any, Optional, Callable
 from pathlib import Path
 
 # Auto-detect and import the right MCP components
 try:
     from mcp.server.fastmcp.server import FastMCP
-    from mcp.server.fastmcp.server import FastMCP as BaseFastMCP
 except ImportError:
     print("Error: FastMCP not found. Install with: pip install fastmcp")
     sys.exit(1)
@@ -192,7 +190,6 @@ class Server:
         # Run the server
         if run_config.get('transport') == 'http':
             # HTTP transport
-            from mcp.server.fastmcp.server import FastMCP as HTTPFastMCP
             # This would need more implementation for HTTP
             pass
         elif run_config.get('transport') == 'sse':

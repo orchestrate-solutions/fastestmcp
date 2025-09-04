@@ -32,8 +32,6 @@ class DummyClient:
 def router():
     return LLMRouter(DummyClient())
 
-import pytest
-
 @pytest.mark.asyncio
 async def test_route_tool(router):
     msg = {"tool": "foo", "args": {"x": 1}}

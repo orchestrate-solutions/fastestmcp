@@ -1,6 +1,7 @@
 import os
-yaml_path = os.path.join(os.path.dirname(__file__), '../../src/client/context_structure.yaml')
 from client.app.context_structure_manager import ContextStructureManager
+
+yaml_path = os.path.join(os.path.dirname(__file__), '../../src/client/context_structure.yaml')
 
 def test_parse_and_add_field(tmp_path):
     # Copy the sample yaml to a temp file

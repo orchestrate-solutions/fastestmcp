@@ -29,7 +29,7 @@ async def test_echo_tool(mcp_server):
     client = MCPClient(MCP_CONFIG_PATH)
     async with client._client:
         # List tools
-        tools = await client.tools.list()
+        await client.tools.list()
         # Call echo tool
         response = await client.tools.call('echo', text='hello world')
         import json

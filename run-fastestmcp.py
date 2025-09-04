@@ -14,7 +14,7 @@ def main():
     
     # Check if we're in a uv environment
     try:
-        result = subprocess.run(['uv', '--version'], capture_output=True, text=True, check=True)
+        subprocess.run(['uv', '--version'], capture_output=True, text=True, check=True)
         print("Using uv to run FastestMCP...")
         # Use uvx to run fastestmcp
         subprocess.run(['uvx', 'fastestmcp'] + sys.argv[1:], check=True)

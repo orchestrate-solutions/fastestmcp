@@ -1,21 +1,6 @@
 """
 Notification generators for FastestMCP CLI
-Uses dyna        print(f"📢 Broadcasting notification {index}: {message} (priority: {priority})")
-
-        return notification_data
-    
-    # Set function attributes for proper identification
-    notification_func.__name__ = f"notification_{index}"
-    notification_func.__doc__ = f"""
-    Notification {index} - handles server notification broadcasting.
-
-    Args:
-        message: The notification message to broadcast
-        priority: Priority level (low, medium, high, critical)
-
-    Returns:
-        Dict containing notification details
-    """ern for unlimited scaling
+Uses dynamic template patterns to generate MCP server and client code
 """
 
 def generate_notifications_file(notifications: int, server_type: str) -> str:
@@ -45,7 +30,7 @@ def create_notification_function(index: int):
     """
     async def notification_func(message: str = "Default notification", priority: str = "info") -> Dict[str, Any]:
         """
-        Notification ''' + str(index) + ''' - handles server notification broadcasting.
+        Notification """ + str(index) + """ - handles server notification broadcasting.
 
         Args:
             message: The notification message to broadcast

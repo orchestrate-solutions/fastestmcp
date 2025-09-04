@@ -63,8 +63,8 @@ class ContextStructureManager:
                 if self.uncategorized:
                     dumped = yaml.dump(self.uncategorized, default_flow_style=False)
                     # Indent if needed (YAML dump may not indent top-level list)
-                    for l in dumped.splitlines():
-                        out_lines.append(l + '\n')
+                    for yaml_line in dumped.splitlines():
+                        out_lines.append(yaml_line + '\n')
                 wrote_uncat = True
                 # Skip any old uncategorized fields until next non-empty, non-comment line or EOF
                 j = idx + 1

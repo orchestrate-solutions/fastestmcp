@@ -92,9 +92,6 @@ async def test_llm_simulated_tool_call(dummy_client):
     result = await dummy_client.prompts.render('greet', user='Ford')
     assert result == 'Hello, Ford!'
 
-
-import pytest
-
 @pytest.mark.asyncio
 async def test_llm_json_tool_call(dummy_client):
     router = LLMRouter(dummy_client)

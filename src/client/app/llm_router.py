@@ -1,14 +1,11 @@
+import asyncio
 import json
 
 def format_for_llm(data):
     """
     Serialize a Python dict as a compact JSON string for LLM handoff.
     """
-    import json
     return json.dumps(data, separators=(",", ":"))
-
-
-import asyncio
 
 class LLMRouter:
     """

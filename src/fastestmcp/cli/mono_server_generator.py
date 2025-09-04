@@ -1,6 +1,12 @@
 """
-Mono server generation functions for FastestMCP CLI
+Mono server generator for FastestMCP CLI
 """
+
+from ..components.component_loader import ComponentLoader
+from .test_generator import generate_test_file
+
+# Initialize component loader
+component_loader = ComponentLoader()
 
 
 """
@@ -9,7 +15,6 @@ Now uses the component-based system for generating servers
 """
 
 from ..components.component_loader import ComponentLoader
-from .test_generator import generate_test_file
 
 # Initialize component loader
 component_loader = ComponentLoader()

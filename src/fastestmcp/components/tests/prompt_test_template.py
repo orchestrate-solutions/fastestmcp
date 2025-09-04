@@ -63,7 +63,7 @@ class TestPromptComponents:
         argument = result.arguments[0]
         assert argument.name == "context"
         assert argument.description == "Context for the prompt"
-        assert argument.required == True
+        assert argument.required
 
     def test_register_prompts_with_mock_server(self):
         """Test register_prompts function with mocked server"""

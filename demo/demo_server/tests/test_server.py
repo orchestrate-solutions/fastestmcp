@@ -221,7 +221,7 @@ class TestDemoserverServer:
     @pytest.mark.asyncio
     async def test_server_can_start(self):
         """Test that the server can be started (mocked)"""
-        with patch.object(app, 'run_stdio_async', new_callable=AsyncMock) as mock_run:
+        with patch.object(app, 'run_stdio_async', new_callable=AsyncMock):
             # We can't actually run the server in tests, but we can verify the method exists
             assert hasattr(app, 'run_stdio_async')
             assert callable(app.run_stdio_async)
@@ -230,57 +230,14 @@ class TestDemoserverServer:
         """Test tools registration with mocked server"""
         mock_server = Mock()
         result = tools.register_tools(mock_server)
-        assert result["success"] == True
+        assert result["success"]
         assert result["count"] == 3
 
     def test_resources_registration(self):
         """Test resources registration with mocked server"""
         mock_server = Mock()
         result = resources.register_resources(mock_server)
-        assert result["success"] == True
-        assert result["count"] == 2
-
-
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])
-    """Test cases for the demo_server MCP server"""
-
-    def test_server_creation(self):
-        """Test that the MCP server is created successfully"""
-        assert app is not None
-        assert hasattr(app, 'name')
-        assert "demo_server" in app.name
-
-    def test_tools_module_import(self):
-        """Test that tools module can be imported"""
-        assert tools is not None
-        assert hasattr(tools, 'register_tools')
-
-    def test_resources_module_import(self):
-        """Test that resources module can be imported"""
-        assert resources is not None
-        assert hasattr(resources, 'register_resources')
-
-    @pytest.mark.asyncio
-    async def test_server_can_start(self):
-        """Test that the server can be started (mocked)"""
-        with patch.object(app, 'run_stdio_async', new_callable=AsyncMock) as mock_run:
-            # We can't actually run the server in tests, but we can verify the method exists
-            assert hasattr(app, 'run_stdio_async')
-            assert callable(app.run_stdio_async)
-
-    def test_tools_registration(self):
-        """Test tools registration with mocked server"""
-        mock_server = Mock()
-        result = tools.register_tools(mock_server)
-        assert result["success"] == True
-        assert result["count"] == 3
-
-    def test_resources_registration(self):
-        """Test resources registration with mocked server"""
-        mock_server = Mock()
-        result = resources.register_resources(mock_server)
-        assert result["success"] == True
+        assert result["success"]
         assert result["count"] == 2
 
 

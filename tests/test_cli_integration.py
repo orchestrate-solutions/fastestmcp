@@ -282,7 +282,7 @@ class TestCLIIntegration:
             spec = importlib.util.spec_from_file_location("test_module", generated_file)
             try:
                 if spec is not None:
-                    test_module = importlib.util.module_from_spec(spec)
+                    importlib.util.module_from_spec(spec)
                 # We don't actually execute it, just check if imports would work
                 # This validates that the import statements are syntactically correct
                 assert spec is not None

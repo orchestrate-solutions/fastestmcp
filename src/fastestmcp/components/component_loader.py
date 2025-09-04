@@ -199,7 +199,7 @@ class ComponentLoader:
             info = loader.get_component_info("tools", "tool_template")
         """
         try:
-            module = self.load_component(component_type, component_name)
+            self.load_component(component_type, component_name)
 
             functions = self.get_component_functions(component_type, component_name)
             register_func = self.get_register_function(component_type, component_name)

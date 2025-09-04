@@ -82,22 +82,6 @@ class SubscriptionClient:
         thread = threading.Thread(target=listener, daemon=True)
         thread.start()
         return SubscriptionHandle(q, stop_event, thread)
-    def listen(self, topic, payload=None):
-        """
-        Listen for events on a subscription topic using the FastMCP client's subscription API.
-        Yields each event as it arrives.
-        """
-        # Always check the wrapper (MCPClient) first
-        if hasattr(self._wrapper, 'call_subscription'):
-            return self._wrapper.call_subscription(topic, payload=payload)
-        if hasattr(self._wrapper, 'subscribe'):
-            return self._wrapper.subscribe(topic, payload=payload)
-        # Then check the underlying FastMCP client
-        if hasattr(self._client, 'call_subscription'):
-            return self._client.call_subscription(topic, payload=payload)
-        if hasattr(self._client, 'subscribe'):
-            return self._client.subscribe(topic, payload=payload)
-        raise NotImplementedError("FastMCP client does not support subscription streaming.")
 
 class SubscriptionHandle:
     """

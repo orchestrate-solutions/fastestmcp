@@ -7,10 +7,14 @@ print("🚀 FastestMCP Demo - Three Levels of Simplicity")
 print("=" * 50)
 
 # Level 1: Zero-Config
-print("\n📍 LEVEL 1: Zero-Config (80% of use cases)")
-print("-" * 40)
+"""
+Demo script showing FastestMCP usage at different levels
+"""
 
 from fastestmcp import Server
+
+print("\n📍 LEVEL 1: Zero-Config (80% of use cases)")
+print("-" * 40)
 
 level1_app = Server("demo-level1")
 

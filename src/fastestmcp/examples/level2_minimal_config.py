@@ -28,7 +28,7 @@ def scrape_and_save(url: str, filename: str) -> str:
     """Scrape content from URL and save to file"""
     try:
         # Use the web scraper component
-        content = "Sample scraped content"  # In real usage: scraper.scrape_url(url)
+        # content = "Sample scraped content"  # In real usage: scraper.scrape_url(url)
 
         # Use the file system component
         # filesystem.save_file(filename, content)  # Would save the file
