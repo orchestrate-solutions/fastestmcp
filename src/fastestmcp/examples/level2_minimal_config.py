@@ -117,7 +117,7 @@ def call_json_api(url: str, method: str = "GET") -> str:
             try:
                 data = response.json()
                 return json.dumps(data, indent=2)
-            except:
+            except (ValueError, TypeError):
                 return response.text
         else:
             return f"API call failed with status {response.status_code}"

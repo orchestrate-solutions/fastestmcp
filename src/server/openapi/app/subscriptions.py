@@ -79,7 +79,8 @@ def register_subscriptions(server):
         """
         # Simulate error checking
         current_time = time.time()
-        hours_ago = current_time - (hours_back * 3600)
+        # Calculate hours ago timestamp (for reference)
+        _ = current_time - (hours_back * 3600)
 
         # Simulate some recent errors
         errors = []
@@ -110,7 +111,8 @@ def register_subscriptions(server):
         """
         # Simulate data change monitoring
         current_time = time.time()
-        hours_ago = current_time - (hours_back * 3600)
+        # Calculate hours ago timestamp (for reference)
+        _ = current_time - (hours_back * 3600)
 
         changes = []
         # Simulate occasional data changes

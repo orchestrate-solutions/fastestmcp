@@ -44,7 +44,7 @@ class TestServer:
     @pytest.mark.asyncio
     async def test_server_can_start(self):
         """Test that the server can be started (mocked)"""
-        with patch.object(app, 'run_stdio_async', new_callable=AsyncMock) as mock_run:
+        with patch.object(app, 'run_stdio_async', new_callable=AsyncMock):
             # We can't actually run the server in tests, but we can verify the method exists
             assert hasattr(app, 'run_stdio_async')
             assert callable(app.run_stdio_async)
@@ -53,7 +53,7 @@ class TestServer:
         """Test tools registration with mocked server"""
         mock_server = Mock()
         result = register_tools(mock_server)
-        assert result["success"] == True
+        assert result["success"]
         assert result["count"] == 1
         assert "tools" in result["component_type"]
 

@@ -1,5 +1,7 @@
 import pytest
+import json
 from client.client import MCPClient
+from client.app.llm_router import LLMRouter
 
 class DummyFastMCP:
     async def call_tool(self, tool_name, kwargs):
@@ -44,8 +46,6 @@ def dummy_client(monkeypatch):
     monkeypatch.setattr('client.client.FastMCPClient', lambda *args, **kwargs: DummyFastMCP())
     dummy_config = {"mcpServers": {"dummy": {"type": "dummy"}}}
     return MCPClient(dummy_config)
-
-import pytest
 
 @pytest.mark.asyncio
 async def test_tools_call(dummy_client):
@@ -97,7 +97,6 @@ import pytest
 
 @pytest.mark.asyncio
 async def test_llm_json_tool_call(dummy_client):
-    from client.app.llm_router import LLMRouter
     router = LLMRouter(dummy_client)
     llm_json = '{"tool": "greet", "args": {"user": "Ford"}}'
     result = await router.route(llm_json)
@@ -106,7 +105,6 @@ async def test_llm_json_tool_call(dummy_client):
 
 @pytest.mark.asyncio
 async def test_llm_json_resource_call(dummy_client):
-    from client.app.llm_router import LLMRouter
     router = LLMRouter(dummy_client)
     llm_json = '{"resource": "file"}'
     result = await router.route(llm_json)
@@ -115,8 +113,6 @@ async def test_llm_json_resource_call(dummy_client):
 
 @pytest.mark.asyncio
 async def test_llm_capabilities_exposed(dummy_client):
-    from client.app.llm_router import LLMRouter
-    import json
     router = LLMRouter(dummy_client)
     caps = json.loads(await router.get_llm_capabilities())
     assert 'greet' in caps['prompts']

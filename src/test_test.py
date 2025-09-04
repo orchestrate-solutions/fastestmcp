@@ -53,7 +53,7 @@ class TestTestServer:
         """Test tools registration with mocked server"""
         mock_server = Mock()
         result = register_tools(mock_server)
-        assert result["success"] == True
+        assert result["success"]
         assert result["count"] == 2
         assert "tools" in result["component_type"]
 
@@ -61,7 +61,7 @@ class TestTestServer:
         """Test resources registration with mocked server"""
         mock_server = Mock()
         result = register_resources(mock_server)
-        assert result["success"] == True
+        assert result["success"]
         assert result["count"] == 2
         assert "resources" in result["component_type"]
 
@@ -69,8 +69,8 @@ class TestTestServer:
         """Test prompts registration with mocked server"""
         mock_server = Mock()
         result = register_prompts(mock_server)
-        assert result["success"] == True
-        assert result["count"] == {prompts}
+        assert result["success"]
+        assert result["count"] == 2  # Fixed undefined variable
         assert "prompts" in result["component_type"]
 
 

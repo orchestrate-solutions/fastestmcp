@@ -36,7 +36,8 @@ def register_notifications(server):
         Check for recent API error notifications.
         """
         current_time = time.time()
-        hours_ago = current_time - (hours_back * 3600)
+        # Calculate hours ago timestamp (for reference)
+        _ = current_time - (hours_back * 3600)
 
         # Simulate checking for recent errors
         errors = []
@@ -112,7 +113,8 @@ def register_notifications(server):
         Check for security-related notifications and alerts.
         """
         current_time = time.time()
-        hours_ago = current_time - (hours_back * 3600)
+        # Calculate hours ago timestamp (for reference)
+        _ = current_time - (hours_back * 3600)
 
         # Simulate security check
         security_events = []
