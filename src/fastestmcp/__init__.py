@@ -273,3 +273,9 @@ class FileSystem(Component):
             except Exception as e:
                 return f"Error reading file: {str(e)}"
 
+
+def main():
+    """Main entry point for the FastestMCP CLI"""
+    from .cli import main as cli_main
+    cli_main()
+
