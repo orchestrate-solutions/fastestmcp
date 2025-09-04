@@ -10,6 +10,9 @@
 ## 👋 Quick Start
 
 ### Install
+
+**Prerequisites:** Python 3.10+, pip
+
 ```bash
 # Recommended: uv (modern, fast)
 uv add fastestmcp
@@ -17,6 +20,34 @@ uv add fastestmcp
 # Alternative: pip
 pip install fastestmcp
 ```
+
+### Global Installation
+
+**Recommended (pipx - isolated environment):**
+```bash
+pip install pipx
+pipx ensurepath
+pipx install fastestmcp
+fastestmcp --help
+```
+
+**Alternative (pip global):**
+```bash
+pip install --user fastestmcp
+fastestmcp --help
+```
+
+**From repo (no install):**
+```bash
+git clone https://github.com/orchestrate-solutions/fastestmcp.git
+cd fastestmcp
+python -m fastestmcp.cli --help
+```
+
+**Windows PATH:** Add `C:\Users\<username>\.local\bin` to User PATH environment variable.
+
+**Update:** `pipx upgrade fastestmcp` or `pip install --user --upgrade fastestmcp`
+
 
 ### Create Your First Server
 ```python
