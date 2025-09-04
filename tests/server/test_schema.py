@@ -1,4 +1,3 @@
-import pytest
 from server.stdio.app.schema import register_schema
 from tests.helpers import DummyServer
 

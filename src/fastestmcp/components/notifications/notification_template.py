@@ -3,7 +3,7 @@ Notification Component Template - Dynamic notification generation for MCP server
 """
 
 import time
-from typing import Dict, Any, AsyncGenerator
+from typing import Dict, Any
 
 
 def register_notifications(server_app, count: int = 1) -> None:

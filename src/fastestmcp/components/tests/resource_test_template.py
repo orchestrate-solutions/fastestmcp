@@ -2,9 +2,7 @@
 Test Template for Resource Components - Reusable test patterns for MCP server resources
 """
 
-import pytest
-from unittest.mock import Mock, patch
-from pydantic import AnyUrl
+from unittest.mock import Mock
 
 
 class TestResourceComponents:

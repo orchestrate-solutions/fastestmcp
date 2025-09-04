@@ -11,9 +11,11 @@
 
 ### Install
 ```bash
-pip install fastestmcp
-# or
+# Recommended: uv (modern, fast)
 uv add fastestmcp
+
+# Alternative: pip
+pip install fastestmcp
 ```
 
 ### Create Your First Server
@@ -104,14 +106,14 @@ Example configuration:
 
 ## � Installation Options
 
-### Global Install (Recommended)
-```bash
-pip install fastestmcp
-```
-
-### uv (Modern Python)
+### uv (Recommended - Modern Python)
 ```bash
 uv add fastestmcp
+```
+
+### Global Install
+```bash
+pip install fastestmcp
 ```
 
 ### From Source

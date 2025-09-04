@@ -2,7 +2,6 @@
 Prompt Component Template - Dynamic prompt generation for MCP servers
 """
 
-from typing import Any, Dict, List
 from mcp.types import Prompt, PromptArgument
 
 

@@ -1,4 +1,3 @@
-import pytest
 from server.stdio.app.auth import register_auth
 from tests.helpers import DummyServer
 

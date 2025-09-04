@@ -152,7 +152,7 @@ def register_notifications(server):
             result["priority"] = "high"
             result["message"] = "API performance degradation detected"
             result["alert"] = True
-            result["threshold_breached"] = f"response_time > 2000ms or error_rate > 5%"
+            result["threshold_breached"] = "response_time > 2000ms or error_rate > 5%"
         else:
             result["priority"] = "info"
             result["message"] = "API performance normal"

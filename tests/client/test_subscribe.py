@@ -1,7 +1,4 @@
-import pytest
-import threading
-import queue
-from client.app.subscribe import SubscriptionClient, SubscriptionHandle
+from client.app.subscribe import SubscriptionClient
 
 class DummyWrapper:
     def __init__(self):

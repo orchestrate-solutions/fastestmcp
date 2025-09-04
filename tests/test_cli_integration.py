@@ -13,11 +13,7 @@ import pytest
 import subprocess
 import sys
 import tempfile
-import os
 from pathlib import Path
-import json
-import yaml
-import importlib.util
 
 
 class TestCLIIntegration:
@@ -281,7 +277,6 @@ class TestCLIIntegration:
             assert generated_file.exists()
 
             # Try to import the module (this will catch import errors)
-            import sys
             import importlib.util
 
             spec = importlib.util.spec_from_file_location("test_module", generated_file)
@@ -712,10 +707,7 @@ class TestCLIIntegration:
 
     def test_generated_server_functional_validation(self):
         """Test that generated servers actually run and respond to MCP protocol"""
-        import asyncio
-        import json
         import time
-        from concurrent.futures import ThreadPoolExecutor
 
         with tempfile.TemporaryDirectory() as temp_dir:
             # Generate a simple server for testing

@@ -6,7 +6,6 @@ Area of Responsibility: Monitoring Tools for OpenAPI Server
 """
 
 import time
-from typing import Dict, Any, Optional
 
 def current_utc_timestamp() -> float:
     """

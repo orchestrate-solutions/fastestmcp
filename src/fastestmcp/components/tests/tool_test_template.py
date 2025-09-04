@@ -2,7 +2,6 @@
 Test Template for Tool Components - Reusable test patterns for MCP server tools
 """
 
-import pytest
 from unittest.mock import Mock, patch
 
 

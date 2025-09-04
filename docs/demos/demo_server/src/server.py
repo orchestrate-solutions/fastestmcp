@@ -62,7 +62,7 @@ def load_components():
 components = load_components()
 
 # Create MCP server
-app = FastMCP(f"demo_server MCP Server")
+app = FastMCP("demo_server MCP Server")
 
 # Register components
 if 'tools' in components:

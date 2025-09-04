@@ -4,14 +4,12 @@ Test CLI combination validation and performance limits
 Tests for large component combinations, realistic limits, and performance boundaries
 """
 
-import pytest
 import subprocess
 import sys
 import tempfile
 import time
 from pathlib import Path
 import psutil
-import os
 
 
 class TestCLICombinationValidation:

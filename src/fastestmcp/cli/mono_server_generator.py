@@ -2,7 +2,6 @@
 Mono server generation functions for FastestMCP CLI
 """
 
-from .notification_generators import generate_notifications_file, generate_subscriptions_file
 
 """
 Mono server generation functions for FastestMCP CLI

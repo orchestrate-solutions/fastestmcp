@@ -1,5 +1,4 @@
 import os
-import pytest
 yaml_path = os.path.join(os.path.dirname(__file__), '../../src/client/context_structure.yaml')
 from client.app.context_structure_manager import ContextStructureManager
 

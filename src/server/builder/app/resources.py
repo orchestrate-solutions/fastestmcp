@@ -4,8 +4,6 @@ Provides FastMCP components, templates, and best practices as MCP resources
 """
 
 import json
-from pathlib import Path
-from typing import Dict, List, Any
 
 from mcp.server.fastmcp.server import FastMCP
 

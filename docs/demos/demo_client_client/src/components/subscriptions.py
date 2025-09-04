@@ -5,7 +5,7 @@ MCP Client subscription management
 """
 
 import asyncio
-from typing import Dict, Any, List, Callable, Optional
+from typing import Dict, Any, Callable, Optional
 
 class SubscriptionClient:
     """

@@ -3,9 +3,8 @@ import pytest
 import requests
 import subprocess
 import time
-import signal
 import os
-from tests.utilities.llm_test_utils import llm_call, LLM_MODEL, LLM_URL
+from tests.utilities.llm_test_utils import llm_call
 
 # Global variable to track the mock server process
 _mock_server_process = None

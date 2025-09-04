@@ -1,4 +1,3 @@
-import pytest
 from server.stdio.app.discovery import register_discovery
 from tests.helpers import DummyServer
 

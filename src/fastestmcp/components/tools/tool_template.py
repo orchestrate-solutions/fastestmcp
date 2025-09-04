@@ -2,7 +2,6 @@
 Tool Component Template - Dynamic tool generation for MCP servers
 """
 
-from typing import Any, Dict
 
 
 def register_tools(server_app, count: int = 1) -> None:

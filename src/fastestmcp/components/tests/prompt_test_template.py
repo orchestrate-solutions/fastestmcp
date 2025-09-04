@@ -2,8 +2,7 @@
 Test Template for Prompt Components - Reusable test patterns for MCP server prompts
 """
 
-import pytest
-from unittest.mock import Mock, patch
+from unittest.mock import Mock
 
 
 class TestPromptComponents:

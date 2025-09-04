@@ -1,4 +1,3 @@
-import pytest
 from server.stdio.app.tools import register_tools
 from tests.helpers import DummyServer
 

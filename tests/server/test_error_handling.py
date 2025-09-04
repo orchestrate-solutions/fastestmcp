@@ -1,4 +1,3 @@
-import pytest
 from server.stdio.app.error_handling import register_error_handlers
 from tests.helpers import DummyServer
 

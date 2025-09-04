@@ -1,7 +1,7 @@
 # Component Marketplace Examples
 # Showcasing the power of pre-built components
 
-from fastestmcp import Server, WebScraper, FileSystem, Database
+from fastestmcp import Server, WebScraper, FileSystem
 
 # Example 1: Content Aggregator
 print("=== Example 1: Content Aggregator ===")

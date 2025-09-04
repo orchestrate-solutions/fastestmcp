@@ -5,10 +5,8 @@ Main server generation orchestration for FastestMCP CLI
 from pathlib import Path
 
 from .mono_server_generator import generate_mono_server_file, generate_mono_test_file
-from .utils import generate_pyproject_toml, generate_server_folder_markdown, generate_test_file_for_project
+from .utils import generate_pyproject_toml, generate_test_file_for_project
 from .generators import generate_tools_file, generate_resources_file, generate_prompts_file, generate_notifications_file_wrapper, generate_subscriptions_file_wrapper
-from .utils import generate_http_server_file, generate_stdio_server_file, generate_modular_app_components
-from .structured_server_generator import generate_additional_files
 
 
 def generate_clean_server_file(name: str, tools: int, resources: int, prompts: int, notifications: int, subscriptions: int, transport: str, server_type: str) -> str:

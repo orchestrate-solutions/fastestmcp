@@ -8,7 +8,7 @@ from mcp.server.fastmcp import FastMCP
 from fastestmcp.components import register_component
 
 # Create MCP server
-app = FastMCP(f" MCP Server")
+app = FastMCP(" MCP Server")
 
 # Tools - Using component system
 def register_tools(server_app):

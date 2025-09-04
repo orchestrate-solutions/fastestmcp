@@ -3,8 +3,7 @@ Test Template for Notification Components - Reusable test patterns for MCP serve
 """
 
 import pytest
-import asyncio
-from unittest.mock import Mock, patch, AsyncMock
+from unittest.mock import Mock
 from datetime import datetime
 
 
@@ -138,7 +137,6 @@ class TestNotificationComponents:
 
     def test_notification_metadata_structure(self):
         """Test notification metadata structure"""
-        from fastestmcp.components.notifications.notification_template import notification_1
 
         # We can't directly test async function in sync test, so we'll test the structure
         # by checking what the function should return based on the implementation

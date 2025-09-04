@@ -1,4 +1,3 @@
-import asyncio
 import pytest
 import subprocess
 import time

@@ -2,14 +2,9 @@
 Client generation functions for FastestMCP CLI
 """
 
-import sys
-import argparse
 from pathlib import Path
-from typing import Dict, List, Any
 
 # Import templates
-from .templates import CLIENT_TEMPLATES
-from .notification_generators import generate_client_notifications_file, generate_client_subscriptions_file
 
 
 def generate_complex_client(name: str, apis: int, integrations: int, handlers: int, notifications: int, subscriptions: int, transport: str, structure: str, client_type: str, output_dir: str) -> tuple[str, str]:

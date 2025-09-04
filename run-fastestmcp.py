@@ -7,7 +7,6 @@ Run FastestMCP without installing it globally
 import sys
 import subprocess
 import tempfile
-import os
 from pathlib import Path
 
 def main():

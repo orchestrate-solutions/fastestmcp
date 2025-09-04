@@ -1,4 +1,3 @@
-import pytest
 from server.stdio.app.prompts import register_prompts
 from tests.helpers import DummyServer
 

@@ -1,4 +1,3 @@
-import pytest
 from server.stdio.app.notifications import register_notifications
 from tests.helpers import DummyServer
 

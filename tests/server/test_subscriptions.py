@@ -1,4 +1,3 @@
-import pytest
 from server.stdio.app.subscriptions import register_subscriptions, current_utc_timestamp
 from tests.helpers import DummyServer
 

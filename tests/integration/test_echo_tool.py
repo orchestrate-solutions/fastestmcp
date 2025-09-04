@@ -1,11 +1,8 @@
 import subprocess
 import pytest
-import subprocess
 import time
 import os
 import sys
-import asyncio
-import signal
 from client.client import MCPClient
 
 MCP_CONFIG_PATH = "tests/integration/mcp_stdio_only.json"
@@ -29,7 +26,6 @@ def mcp_server():
 
 @pytest.mark.asyncio
 async def test_echo_tool(mcp_server):
-    from client.client import MCPClient
     client = MCPClient(MCP_CONFIG_PATH)
     async with client._client:
         # List tools

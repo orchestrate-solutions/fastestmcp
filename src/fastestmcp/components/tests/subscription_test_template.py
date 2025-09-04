@@ -3,9 +3,7 @@ Test Template for Subscription Components - Reusable test patterns for MCP serve
 """
 
 import pytest
-import asyncio
 from unittest.mock import Mock, patch, AsyncMock
-from datetime import datetime
 
 
 class TestSubscriptionComponents:
@@ -181,7 +179,6 @@ class TestSubscriptionComponents:
 
     def test_subscription_timestamp_format(self):
         """Test that subscription events include properly formatted timestamps"""
-        from fastestmcp.components.subscriptions.subscription_template import subscription_1
 
         # We can't directly test async function in sync test for timestamp format,
         # but we can verify the structure exists in the implementation

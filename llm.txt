@@ -152,8 +152,8 @@ fastestmcp client --name test-client --apis 2
 ### Installation Issues
 ```bash
 # Reinstall CLI
-pip uninstall fastestmcp
-pip install -e .
+uv remove fastestmcp
+uv add -e .
 
 # Check installation
 fastestmcp --help
@@ -162,13 +162,13 @@ fastestmcp --help
 ### Import Errors
 ```bash
 # Install dependencies
-pip install fastmcp
+uv add fastmcp
 
 # For HTTP features
-pip install fastmcp[http]
+uv add fastmcp[http]
 
 # For SSE features
-pip install fastmcp[sse]
+uv add fastmcp[sse]
 ```
 
 ### Template Errors

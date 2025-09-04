@@ -8,7 +8,6 @@ Area of Responsibility: Tools
 
 import subprocess
 import os
-import json
 from typing import Optional, Dict, Any
 from pathlib import Path
 

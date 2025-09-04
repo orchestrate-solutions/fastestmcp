@@ -1,7 +1,5 @@
-import pytest
 import tempfile
 import os
-import shutil
 import subprocess
 from pathlib import Path
 from unittest.mock import patch, MagicMock
@@ -15,9 +13,7 @@ def create_clone_git_repository():
     """Create the clone_git_repository function for testing."""
     import subprocess
     import os
-    import json
     from typing import Optional, Dict, Any
-    from pathlib import Path
 
     def _get_repository_info(repo_path: str) -> Dict[str, Any]:
         """Get information about a cloned repository."""

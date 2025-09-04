@@ -8,11 +8,8 @@ Area of Responsibility: Resources
 import json
 import tempfile
 import os
-import shutil
 import tarfile
 import subprocess
-from typing import List, Dict, Any, Optional
-from pathlib import Path
 
 def register_resources(server):
     """

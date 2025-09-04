@@ -5,7 +5,6 @@ Area of Responsibility: Error Handling for OpenAPI Server
 - Handle authentication, rate limiting, and network errors
 """
 
-import json
 
 def register_error_handlers(server):
     """

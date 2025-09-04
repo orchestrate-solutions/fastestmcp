@@ -4,10 +4,8 @@ Provides tools for generating FastMCP components and validating configurations
 """
 
 import json
-import os
 import re
-from pathlib import Path
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any
 
 from mcp.server.fastmcp.server import FastMCP
 

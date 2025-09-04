@@ -54,7 +54,9 @@ class MCPClient:
         Accepts a dict or a path to a JSON/YAML config file.
         Passes the config as-is (with 'mcpServers') to FastMCPClient.
         """
-        import os, json, yaml
+        import os
+        import json
+        import yaml
         if config_or_path is None:
             config_path = os.path.join(os.getcwd(), 'mcp.json')
             if os.path.exists(config_path):

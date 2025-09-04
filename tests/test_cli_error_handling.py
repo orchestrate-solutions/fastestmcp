@@ -4,14 +4,10 @@ Test CLI error handling and edge cases
 Tests for invalid inputs, missing files, permission issues, and error recovery
 """
 
-import pytest
 import subprocess
 import sys
 import tempfile
-import os
 from pathlib import Path
-from unittest.mock import patch, MagicMock
-import stat
 
 
 class TestCLIErrorHandling:

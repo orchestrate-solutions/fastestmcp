@@ -6,7 +6,6 @@ MCP Client notifications and subscriptions
 
 import heapq
 import asyncio
-from typing import Dict, Any, List, Optional
 
 class NotificationsClient:
     """

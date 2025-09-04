@@ -5,12 +5,11 @@ FastestMCP CLI - Main entry point
 
 import sys
 import argparse
-from pathlib import Path
-from typing import Dict, List, Any
 
 # Import from our modular CLI components
 from .templates import TEMPLATES, CLIENT_TEMPLATES
-from .server_generator import generate_complex_server, generate_level_boilerplate, generate_server_from_template
+from .main_generator import generate_complex_server
+from .template_handlers import generate_level_boilerplate, generate_server_from_template
 from .client_generator import generate_complex_client
 
 
