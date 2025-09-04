@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/orchestrate-solutions-fastestmcp-badge.png)](https://mseep.ai/app/orchestrate-solutions-fastestmcp)
+
 
 # FastestMCP
 
