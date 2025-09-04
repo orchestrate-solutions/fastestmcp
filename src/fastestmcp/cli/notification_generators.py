@@ -1,6 +1,21 @@
 """
 Notification generators for FastestMCP CLI
-Uses dynamic template pattern for unlimited scaling
+Uses dyna        print(f"📢 Broadcasting notification {index}: {message} (priority: {priority})")
+
+        return notification_data
+    
+    # Set function attributes for proper identification
+    notification_func.__name__ = f"notification_{index}"
+    notification_func.__doc__ = f"""
+    Notification {index} - handles server notification broadcasting.
+
+    Args:
+        message: The notification message to broadcast
+        priority: Priority level (low, medium, high, critical)
+
+    Returns:
+        Dict containing notification details
+    """ern for unlimited scaling
 """
 
 def generate_notifications_file(notifications: int, server_type: str) -> str:
@@ -50,7 +65,7 @@ def create_notification_function(index: int):
             "metadata": {
                 "source": "server",
                 "version": "1.0",
-                "notification_index": ''' + str(index) + '''
+                "notification_index": index
             }
         }
 
@@ -86,7 +101,7 @@ def create_check_function(index: int):
     """
     def check_func():
         """
-        Check notification ''' + str(index) + ''' status and recent updates.
+        Check notification {index} status and recent updates.
         """
         return {
             "notification_id": f"notification_{index}",
@@ -185,7 +200,7 @@ def create_subscription_function(index: int):
     """
     async def subscription_func(filter_criteria: str = "all") -> AsyncGenerator[Dict[str, Any], None]:
         """
-        Base subscription ''' + str(index) + ''' - provides event streaming with filtering.
+        Base subscription {index} - provides event streaming with filtering.
 
         Args:
             filter_criteria: Criteria for filtering events (default: "all")
@@ -250,7 +265,7 @@ def create_manage_function(index: int):
     """
     def manage_func(action: str = "status", filter_criteria: str = "all"):
         """
-        Manage subscription ''' + str(index) + ''' - get status, update filters, etc.
+        Manage subscription {index} - get status, update filters, etc.
 
         Args:
             action: Action to perform (status, update_filter, pause, resume)
